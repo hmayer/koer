@@ -56,13 +56,23 @@ Presumindo que esteja rodando o projeto em localhost a URL base é `http://local
                             "date" é a data do atendimento;
                             "description" é a descrição dos procedimentos feitos no atendimento.
     
-    PUT: /attendance/<int>  - Atualiza um Atendimento já cadastrado no sistema, identificando ele pelo parâmetro da
-                            URL <int>. Esse endpoint recebe o mesmo documento do endpoint `POST /attendance`
+    PUT: /attendance/<int>  - Atualiza um Atendimento já cadastrado no sistema, identificando ele pelo
+                            parâmetro da URL <int>. Esse endpoint recebe o mesmo documento do
+                            endpoint `POST /attendance`
 
     DELETE: /attendance/<int>   - Remove um Atendimento da base de dados.
     
     GET: /attendance/<int>  - Retorna um agregado do Atendimento, com detalhes e também com os dados do Pet
                             que recebeu o atendimento
+
+    POST: /insert           - Um fast insert que cria Pet e Atendimento ao mesmo tempo,
+                            conforme documento de exemplo:
+                            {
+                            	"name": "Mimi",
+                            	"type": "G",
+                            	"date": "2020-10-05",
+                            	"description": "Ecografia abdominal"
+                            }
 
 ## Executando
 O ambiente de desenvolvimento utiliza docker para subir os seguintes serviços:
